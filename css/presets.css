@@ -17,3 +17,13 @@ hr {
   font-size: 20px;
   font-weight:300;
 }
+
+#loading {
+  display: block;
+  margin: 0 auto;
+  width:50px;
+}
+
+.hide {
+  visibility: hidden;
+}

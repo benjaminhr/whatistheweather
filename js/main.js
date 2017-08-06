@@ -1,5 +1,6 @@
 window.onload = function () {
   var resultText = document.getElementById('result');
+  var loading = document.getElementById('loading');
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -13,7 +14,6 @@ window.onload = function () {
       ourRequest.onload = function () {
         var ourData = JSON.parse(ourRequest.responseText)
         renderHTML(ourData)
-        console.log(ourData)
       }
 
       ourRequest.send()
@@ -24,5 +24,6 @@ window.onload = function () {
 
   function renderHTML (data) {
     resultText.innerHTML = 'There is <b>' + data.weather[0].main.toLowerCase() + '</b>, and the temperature is: <b>' + data.main.temp + '°C </b> in <b>' + data.name + '</b>.';
+    loading.className = 'hide';
   }
 }
