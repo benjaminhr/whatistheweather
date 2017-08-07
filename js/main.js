@@ -14,7 +14,7 @@ window.onload = function () {
       ourRequest.onload = () => {
         var ourData = JSON.parse(ourRequest.responseText)
         renderHTML(ourData)
-        background(ourData)
+        styling(ourData)
       }
 
       ourRequest.send()
@@ -29,18 +29,24 @@ window.onload = function () {
     loading.className = 'hide';
   }
 
-  function background (data) {
+  function styling (data) {
     var weather = data.weather[0].main.toLowerCase();
     var icon = document.getElementById('icon');
+    var body = document.body;
 
     if (weather == 'clear sky') {
       icon.className = 'em em-sunny';
+      body.style.backgroundColor = '#FEDCCC'
     } else if (weather == 'shower rain' || weather == 'rain') {
       icon.className = 'em em-droplet';
+      body.style.backgroundColor = 'rgb(186,225,232)';
     } else if (weather == 'thunderstorm') {
       icon.className = 'em em-zap';
+      body.style.backgroundColor = 'rgb(242,207,100)';
     } else if (weather == 'snow') {
       icon.className = 'em em-snowflake';
+      body.style.backgroundColor = '#FFFDE7'
     }
   }
+
 }
