@@ -8,6 +8,11 @@ body {
   color:black;
 }
 
+.container {
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+
 hr {
   border-top:1px solid black;
   opacity:0.2;
@@ -16,6 +21,8 @@ hr {
 #result {
   font-size: 20px;
   font-weight:300;
+  animation-name: fadeIn;
+  animation-duration: 3s;
 }
 
 #loading {
@@ -26,4 +33,9 @@ hr {
 
 .hide {
   visibility: hidden;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }

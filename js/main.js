@@ -35,12 +35,12 @@ window.onload = function () {
 
     if (weather == 'clear sky') {
       icon.className = 'em em-sunny';
-    } else if (weather == 'shower rain' || 'rain') {
+    } else if (weather == 'shower rain' || weather == 'rain') {
       icon.className = 'em em-droplet';
     } else if (weather == 'thunderstorm') {
       icon.className = 'em em-zap';
-    } else if (weather == 'snow'){
-      icon.className == 'em em-snowflake'
+    } else if (weather == 'snow') {
+      icon.className = 'em em-snowflake';
     }
   }
 }
