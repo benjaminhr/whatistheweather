@@ -30,13 +30,15 @@ window.onload = function () {
   }
 
   function styling (data) {
-    var weather = data.weather[0].main.toLowerCase();
+    var weather = 'clear sky';
+    //var weather = data.weather[0].main.toLowerCase();
     var icon = document.getElementById('icon');
     var body = document.body;
 
     if (weather == 'clear sky') {
       icon.className = 'em em-sunny';
-      body.style.backgroundColor = '#FEDCCC'
+      body.style.backgroundColor = '#FEDCCC';
+
     } else if (weather == 'shower rain' || weather == 'rain') {
       icon.className = 'em em-droplet';
       body.style.backgroundColor = 'rgb(186,225,232)';
